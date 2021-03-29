@@ -14,17 +14,25 @@ class calculator extends Controller
 
             $a = $request->numberOne / $request->numberTwo;
             return view("calculator")->with("a", $a);
+        }
+        if ($request->action == "multiplication") {
 
+            $a = $request->numberOne * $request->numberTwo;
+            return view("calculator")->with("a", $a);
+        }
+        if ($request->action == "subtraction") {
+
+            $a = $request->numberOne - $request->numberTwo;
+            return view("calculator")->with("a", $a);
+        }
+        if ($request->action == "addition") {
+
+            $a = $request->numberOne + $request->numberTwo;
+            return view("calculator")->with("a", $a);
         }
 
         dd($request);
         return view("calculator");        
-    }
-
-    public function calc(Request $request){
-
-        
-
     }
 
 }
